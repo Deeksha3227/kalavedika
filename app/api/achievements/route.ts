@@ -5,46 +5,62 @@ const sampleAchievements = [
   {
     id: "1",
     eventId: "sample-event-1",
-    position: "WINNER",
-    year: 2023,
-    teamName: "Rhythm Masters",
+    position: "RUNNER UP",
+    year: 2025,
+    teamName: null,
     usn: null,
-    name: "Group Dance Team",
-    imageUrl: null,
+    name: "OVERALL RUNNER UP",
+    imageUrl: '/VTU.jpeg',
     event: {
       id: "sample-event-1",
-      name: "Group Dance (Western)",
+      name: "Belagavi",
     },
   },
   {
     id: "2",
     eventId: "sample-event-2",
-    position: "RUNNER_UP",
-    year: 2023,
+    position: "OVERALL CHAMPIONSHIP",
+    year: 2025,
     teamName: null,
-    usn: "4AL20CS045",
-    name: "Priya Sharma",
+    usn: null,
+    name: "OVERALL CHAMPIONSHIP",
     imageUrl: null,
     event: {
       id: "sample-event-2",
-      name: "Solo Singing (Eastern)",
+      name: "Madva",
     },
   },
   {
     id: "3",
     eventId: "sample-event-3",
-    position: "WINNER",
-    year: 2022,
+    position: "OVERALL CHAMPIONSHIP",
+    year: 2025,
     teamName: null,
-    usn: "4AL19CS078",
-    name: "Rahul Mehta",
+    usn: null,
+    name: "OVERALL CHAMPIONSHIP",
     imageUrl: null,
     event: {
       id: "sample-event-3",
-      name: "Rangoli Competition",
+      name: "St.Joseph",
     },
   },
+  {
+    id: "4",
+    eventId: "sample-event-4",
+    position: "OVERALL CHAMPIONSHIP",
+    year: 2025,
+    teamName: null,
+    usn: null,
+    name: "OVERALL CHAMPIONSHIP",
+    imageUrl: null,
+    event: {
+      id: "sample-event-4",
+      name: "Sri Devi",
+    },
+  },
+  
 ]
+
 
 export async function GET() {
   // Return static sample data

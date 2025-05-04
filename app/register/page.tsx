@@ -175,9 +175,9 @@ export default function RegisterPage() {
   return (
     <div className="min-h-screen flex flex-col">
 
-      <main className="flex-1 py-12 md:py-20">
-        <div className="container px-4 md:px-6">
-          <div className="max-w-md mx-auto">
+      <main className="flex-1 py-12 md:py-20 max-w-7xl">
+        <div className="container px-4 md:px-6 w-full">
+          <div className="max-w-7xl mx-auto">
             <Card>
               <CardHeader className="bg-orange-50">
                 <CardTitle>Register for Event</CardTitle>

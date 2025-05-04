@@ -36,43 +36,57 @@ const sampleAchievements = [
   {
     id: "1",
     eventId: "sample-event-1",
-    position: "WINNER",
-    year: 2023,
-    teamName: "Rhythm Masters",
+    position: "RUNNER_UP",
+    year: 2025,
+    teamName: null,
     usn: null,
-    name: "Group Dance Team",
+    name: "OVERALL_RUNNER_UP",
     imageUrl: null,
     event: {
       id: "sample-event-1",
-      name: "Group Dance (Western)",
+      name: "Belagavi",
     },
   },
   {
     id: "2",
     eventId: "sample-event-2",
-    position: "RUNNER_UP",
-    year: 2023,
+    position: "OVERALL_CHAMPIONSHIP",
+    year: 2025,
     teamName: null,
-    usn: "4AL20CS045",
-    name: "Priya Sharma",
+    usn: null,
+    name: "OVERALL_CHAMPIONSHIP",
     imageUrl: null,
     event: {
       id: "sample-event-2",
-      name: "Solo Singing (Eastern)",
+      name: "Madva",
     },
   },
   {
     id: "3",
     eventId: "sample-event-3",
-    position: "WINNER",
-    year: 2022,
+    position: "OVERALL_CHAMPIONSHIP",
+    year: 2025,
     teamName: null,
-    usn: "4AL19CS078",
-    name: "Rahul Mehta",
+    usn: null,
+    name: "OVERALL_CHAMPIONSHIP",
     imageUrl: null,
     event: {
       id: "sample-event-3",
-      name: "Rangoli Competition",
+      name: "St.Joseph",
+    },
+  },
+  {
+    id: "4",
+    eventId: "sample-event-4",
+    position: "OVERALL_CHAMPIONSHIP",
+    year: 2025,
+    teamName: null,
+    usn: null,
+    name: "OVERALL_CHAMPIONSHIP",
+    imageUrl: null,
+    event: {
+      id: "sample-event-4",
+      name: "Sri Devi",
     },
   },
 ]
@@ -81,26 +95,26 @@ const sampleAchievements = [
 const sampleCommitteeMembers = [
   {
     id: "1",
-    name: "Dr. Arun Kumar",
-    role: "Faculty Coordinator",
-    email: "arunkumar@ajiet.edu.in",
-    phone: "+91 9876543210",
+    name: "Dr Shobhitha Shetty",
+    role: "Chief Coordinator",
+    email: null,
+    phone: null,
     imageUrl: null,
   },
   {
     id: "2",
-    name: "Priya Sharma",
-    role: "Student Coordinator",
-    email: "priyasharma@ajiet.edu.in",
-    phone: "+91 9876543211",
+    name: "Mr Nithesh",
+    role: "Coordinator",
+    email: null,
+    phone: null,
     imageUrl: null,
   },
   {
     id: "3",
-    name: "Rahul Mehta",
-    role: "Technical Head",
-    email: "rahulmehta@ajiet.edu.in",
-    phone: "+91 9876543212",
+    name: "Association Coordinators",
+    role: "Members",
+    email: null,
+    phone: null,
     imageUrl: null,
   },
 ]
@@ -145,11 +159,11 @@ export default function AboutPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col w-full">
 
       <main className="flex-1">
         {/* Header */}
-        <section className="bg-orange-600 text-white py-12 md:py-20">
+        <section className="bg-orange-500 text-white py-12 md:py-20">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center text-center space-y-4">
               <h1 className="text-3xl font-bold">About Kalavedika</h1>
@@ -184,40 +198,39 @@ export default function AboutPage() {
                   <CardContent className="p-6">
                     <div className="grid md:grid-cols-2 gap-8 items-center">
                       <div>
-                        <h2 className="text-2xl font-bold text-orange-700 mb-4">Our Mission</h2>
+                        <h2 className="text-2xl font-bold text-orange-500 mb-4">Vision of the institute</h2>
                         <p className="text-gray-700 mb-4">
-                          Kalavedika, the cultural committee of AJIET, aims to nurture and showcase the artistic talents
-                          of our students. We provide a platform for creative expression through various cultural events
-                          and competitions.
-                        </p>
-                        <p className="text-gray-700">
-                          Our mission is to celebrate the rich cultural diversity of our student community while
-                          fostering teamwork, leadership, and creative skills that complement academic excellence.
+                        “To produce top-quality engineers 
+                        who are groomed for attaining excellence in their profession and competitive enough to help in the growth 
+                        of nation and global society.”
                         </p>
                       </div>
                       <div className="bg-orange-100 p-6 rounded-lg">
-                        <h3 className="text-xl font-bold text-orange-700 mb-3">Key Objectives</h3>
+                        <h3 className="text-xl font-bold text-orange-500 mb-3">Mission of the institute</h3>
                         <ul className="space-y-2">
                           <li className="flex items-start gap-2">
-                            <div className="bg-orange-600 text-white rounded-full p-1 mt-0.5">
+                            <div className="bg-orange-500 text-white rounded-full p-1 mt-0.5">
                               <Award className="h-4 w-4" />
                             </div>
-                            <span>Promote cultural awareness and appreciation</span>
+                            <span>To offer affordable high-quality graduate program in engineering with 
+                              value education and make the students socially responsible.</span>
                           </li>
                           <li className="flex items-start gap-2">
-                            <div className="bg-orange-600 text-white rounded-full p-1 mt-0.5">
+                            <div className="bg-orange-500 text-white rounded-full p-1 mt-0.5">
                               <Award className="h-4 w-4" />
                             </div>
-                            <span>Provide opportunities for students to showcase their talents</span>
+                            <span>To support and enhance the institutional environment to attain research excellence in both 
+                              faculty and students and to inspire them to push the boundaries of knowledge base.</span>
                           </li>
                           <li className="flex items-start gap-2">
-                            <div className="bg-orange-600 text-white rounded-full p-1 mt-0.5">
+                            <div className="bg-orange-500 text-white rounded-full p-1 mt-0.5">
                               <Award className="h-4 w-4" />
                             </div>
-                            <span>Organize cultural events and competitions</span>
+                            <span>To identify the common areas of interest amongst the individuals for the 
+                              effective industry- institute partnership in a sustainable way by systematically working together.</span>
                           </li>
                           <li className="flex items-start gap-2">
-                            <div className="bg-orange-600 text-white rounded-full p-1 mt-0.5">
+                            <div className="bg-orange-500 text-white rounded-full p-1 mt-0.5">
                               <Award className="h-4 w-4" />
                             </div>
                             <span>Foster teamwork and leadership skills</span>
@@ -233,9 +246,9 @@ export default function AboutPage() {
                 <Card>
                   <CardContent className="p-6">
                     <div className="flex justify-between items-center mb-4">
-                      <h2 className="text-2xl font-bold text-orange-700">Our Achievements</h2>
+                      <h2 className="text-2xl font-bold text-orange-500">Our Achievements</h2>
                       {!isMobile && (
-                        <div className="flex gap-2">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                           <button
                             onClick={() => scrollAchievements("left")}
                             className="p-2 rounded-full bg-orange-100 hover:bg-orange-200"
@@ -260,14 +273,14 @@ export default function AboutPage() {
                       {achievements.map((achievement) => (
                         <div
                           key={achievement.id}
-                          className="flex-shrink-0 w-72 bg-white rounded-lg shadow-md overflow-hidden border border-orange-100"
+                          className="flex-shrink-0 w-90 bg-white rounded-lg shadow-md overflow-hidden border border-orange-100"
                         >
                           <div className="h-32 bg-orange-100 flex items-center justify-center">
-                            <Trophy className="h-16 w-16 text-orange-600" />
+                            <Trophy className="h-16 w-16 text-orange-500" />
                           </div>
                           <div className="p-4">
-                            <div className="inline-block px-3 py-1 mb-2 text-xs font-semibold bg-orange-100 text-orange-800 rounded-full">
-                              {achievement.position === "WINNER" ? "Winner" : "Runner-up"}
+                            <div className="inline-block px-3 py-1 mb-2 text-xs font-semibold bg-orange-100 text-orange-500 rounded-full">
+                            {achievement.position}
                             </div>
                             <h3 className="font-bold mb-1">{achievement.event.name}</h3>
                             <p className="text-sm text-gray-600 mb-1">{achievement.name}</p>
@@ -286,7 +299,7 @@ export default function AboutPage() {
               <TabsContent value="committee" className="mt-6">
                 <Card>
                   <CardContent className="p-6">
-                    <h2 className="text-2xl font-bold text-orange-700 mb-6">Our Committee</h2>
+                    <h2 className="text-2xl font-bold text-orange-500 mb-6">Our Committee</h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                       {committeeMembers.map((member) => (
@@ -295,11 +308,11 @@ export default function AboutPage() {
                           className="bg-white rounded-lg shadow-md overflow-hidden border border-orange-100"
                         >
                           <div className="h-32 bg-orange-100 flex items-center justify-center">
-                            <Users className="h-16 w-16 text-orange-600" />
+                            <Users className="h-16 w-16 text-orange-500" />
                           </div>
                           <div className="p-4">
                             <h3 className="font-bold mb-1">{member.name}</h3>
-                            <p className="text-sm text-orange-600 mb-3">{member.role}</p>
+                            <p className="text-sm text-orange-500 mb-3">{member.role}</p>
                             {member.email && <p className="text-sm text-gray-600 mb-1">Email: {member.email}</p>}
                             {member.phone && <p className="text-sm text-gray-600">Phone: {member.phone}</p>}
                           </div>

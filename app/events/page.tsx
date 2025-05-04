@@ -22,7 +22,6 @@ type Event = {
   }
 }
 
-// Sample events data for initial rendering
 const sampleEvents = [
   {
     id: "1",
@@ -104,7 +103,6 @@ const sampleEvents = [
   },
 ]
 
-// Helper function to get icon based on category
 const getCategoryIcon = (categoryName: string) => {
   switch (categoryName) {
     case "Solo Singing":
@@ -162,16 +160,16 @@ export default function EventsPage() {
   const filteredEvents = activeCategory ? events.filter((event) => event.category.name === activeCategory) : events
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col w-full">
 
       <main className="flex-1">
         {/* Header */}
-        <section className="bg-orange-600 text-white py-12 md:py-20">
+        <section className="bg-orange-500 text-white py-12 md:py-20">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center text-center space-y-4">
               <h1 className="text-3xl font-bold">Explore Our Events</h1>
               <p className="max-w-[700px]">
-                Discover the diverse range of cultural events and competitions at Kalavedika.
+              "Kalavedika: Where Culture Ignites Talent."
               </p>
             </div>
           </div>
@@ -184,7 +182,7 @@ export default function EventsPage() {
               <Button
                 variant={activeCategory === null ? "default" : "outline"}
                 onClick={() => setActiveCategory(null)}
-                className={activeCategory === null ? "bg-orange-600" : ""}
+                className={activeCategory === null ? "bg-orange-500" : ""}
               >
                 All Events
               </Button>
@@ -193,7 +191,7 @@ export default function EventsPage() {
                   key={category}
                   variant={activeCategory === category ? "default" : "outline"}
                   onClick={() => setActiveCategory(category)}
-                  className={activeCategory === category ? "bg-orange-600" : ""}
+                  className={activeCategory === category ? "bg-orange-500" : ""}
                 >
                   {category}
                 </Button>
@@ -235,11 +233,11 @@ export default function EventsPage() {
                         {event.description || "Join this exciting event and showcase your talent!"}
                       </p>
                       {event.isGroupEvent && event.maxParticipants && (
-                        <p className="text-xs text-gray-500 mt-2">Max participants: {event.maxParticipants}</p>
+                        <p className="text-xs text-gray-600 mt-2">Max participants: {event.maxParticipants}</p>
                       )}
                     </CardContent>
                     <CardFooter>
-                      <Button asChild className="w-full bg-orange-600 hover:bg-orange-700">
+                      <Button asChild className="w-full bg-orange-500 hover:bg-orange-700">
                         <Link href={`/register?eventId=${event.id}`}>Register Now</Link>
                       </Button>
                     </CardFooter>
@@ -247,36 +245,6 @@ export default function EventsPage() {
                 ))}
               </div>
             )}
-          </div>
-        </section>
-
-        {/* Notice Board */}
-        <section className="py-12 md:py-16 bg-gray-50">
-          <div className="container px-4 md:px-6">
-            <div className="max-w-3xl mx-auto bg-amber-50 p-6 rounded-lg shadow-md border-2 border-amber-200 relative">
-              <div className="absolute -top-4 -right-4 bg-red-500 text-white p-2 rounded-full shadow-md">
-                <Paintbrush className="h-6 w-6" />
-              </div>
-              <h2 className="text-2xl font-bold text-amber-800 mb-4">Event Notice Board</h2>
-              <div className="space-y-4">
-                <div className="bg-white p-4 rounded shadow">
-                  <h3 className="font-bold text-gray-800">Important Dates</h3>
-                  <p className="text-sm text-gray-600">Registration Deadline: May 15, 2025</p>
-                  <p className="text-sm text-gray-600">Event Dates: June 1-5, 2025</p>
-                </div>
-                <div className="bg-white p-4 rounded shadow">
-                  <h3 className="font-bold text-gray-800">Venue</h3>
-                  <p className="text-sm text-gray-600">AJIET Main Auditorium & Cultural Complex</p>
-                </div>
-                <div className="bg-white p-4 rounded shadow">
-                  <h3 className="font-bold text-gray-800">Rules & Guidelines</h3>
-                  <p className="text-sm text-gray-600">
-                    All participants must be current AJIET students. Detailed rules for each event will be shared after
-                    registration.
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
       </main>
