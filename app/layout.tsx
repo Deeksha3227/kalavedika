@@ -1,36 +1,30 @@
-// app/layout.tsx
-import "./globals.css";
-import { Roboto } from "next/font/google";
-import type { Metadata } from "next";
-import type { ReactNode } from "react";
+import "./globals.css"
+// import { Inter } from "next/font/google"
+import type { Metadata } from "next"
+import type { ReactNode } from "react"
+import { ThemeProvider } from "@/components/theme-provider"
 
-const roboto = Roboto({ subsets: ["latin"], weight: "700" });
+// const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Cultural Committee",
-};
+  title: "Kalavedika - AJIET Cultural Committee",
+  description: "Cultural events and activities at AJ Institute of Engineering & Technology"
+}
 
 interface RootLayoutProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
-      <body className={roboto.className}>
-        <div className="fade-in">
-          <div
-            style={{
-              backgroundImage: "url('/cultural-bg.jpeg')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              minHeight: "100vh",
-            }}
-          >
-            {children}
-          </div>
-        </div>
+    <html lang="en" suppressHydrationWarning>
+      <body 
+      // className={inter.className}
+      >
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }

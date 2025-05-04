@@ -1,0 +1,80 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Event categories
+model EventCategory {
+  id          String  @id @default(cuid())
+  name        String  @unique
+  description String?
+  events      Event[]
+}
+
+// Individual events
+model Event {
+  id           String        @id @default(cuid())
+  name         String
+  description  String?
+  categoryId   String
+  category     EventCategory @relation(fields: [categoryId], references: [id])
+  maxParticipants Int?
+  isGroupEvent Boolean       @default(false)
+  registrations Registration[]
+  achievements Achievement[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+}
+
+// User registrations
+model Registration {
+  id        String   @id @default(cuid())
+  name      String
+  usn       String
+  email     String
+  eventId   String
+  event     Event    @relation(fields: [eventId], references: [id])
+  teamName  String?  // For group events
+  teamMembers String? // JSON array of team members for group events
+  status    String   @default("PENDING") // PENDING, APPROVED, REJECTED
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([usn, eventId])
+}
+
+// Achievements (winners, runners-up)
+model Achievement {
+  id        String   @id @default(cuid())
+  eventId   String
+  event     Event    @relation(fields: [eventId], references: [id])
+  position  String   // WINNER, RUNNER_UP, etc.
+  year      Int
+  teamName  String?
+  usn       String?  // For individual achievements
+  name      String
+  imageUrl  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([eventId, position, year])
+}
+
+// Committee members
+model CommitteeMember {
+  id        String   @id @default(cuid())
+  name      String
+  role      String
+  email     String?
+  phone     String?
+  imageUrl  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
