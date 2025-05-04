@@ -1,8 +1,6 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Award, ChevronLeft, ChevronRight, Users, Info, Trophy } from "lucide-react"
@@ -148,7 +146,6 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
 
       <main className="flex-1">
         {/* Header */}
@@ -317,7 +314,6 @@ export default function AboutPage() {
         </section>
       </main>
 
-      <Footer />
     </div>
   )
 }
