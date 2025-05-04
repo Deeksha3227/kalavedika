@@ -1,5 +1,5 @@
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
+import { Navbar } from "@/app/navbar"
+import { Footer } from "@/app/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ArrowRight, Award, Calendar, Music, Users } from "lucide-react"

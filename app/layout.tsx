@@ -2,9 +2,9 @@ import "./globals.css"
 import { Inter } from "next/font/google"
 import type { Metadata } from "next"
 import type { ReactNode } from "react"
-import { ThemeProvider } from "@/components/theme-provider"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
+import { ThemeProvider } from "@/app/theme-provider"
+import { Navbar } from "@/app/navbar"
+import { Footer } from "@/app/footer"
 
 const inter = Inter({ subsets: ["latin"] })
 
