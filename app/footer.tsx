@@ -45,13 +45,12 @@ export function Footer() {
               About
             </a>
           </div>
-
-          <div className="pt-4">
-            <p className="text-sm text-white/70">
-              &copy; {new Date().getFullYear()} Kalavedika, AJIET Cultural Committee. All rights reserved.
-            </p>
-          </div>
         </div>
+      </div>
+      <div className="pt-4 flex justify-center">
+        <p className="text-sm text-white/70">
+          &copy; {new Date().getFullYear()} Kalavedika, AJIET Cultural Committee. All rights reserved.
+        </p>
       </div>
     </footer>
   )
