@@ -7,9 +7,6 @@ import { ArrowRight, Award, Calendar, Music, Users } from "lucide-react"
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
-
-      {/* Hero Section */}
       <section className="relative flex items-center justify-center py-20 md:py-32 bg-gradient-to-b from-orange-50 to-orange-100">
         <div className="absolute inset-0 bg-[url('/cultural-bg.jpeg')] bg-cover bg-center opacity-20 z-0"></div>
         <div className="container px-4 md:px-6 relative z-10">
@@ -147,8 +144,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   )
 }

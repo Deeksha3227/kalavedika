@@ -25,7 +25,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
       >
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <Navbar />
+          <div className="flex text-center justify-center">
             {children}
+          </div>
           <Footer />
         </ThemeProvider>
       </body>
