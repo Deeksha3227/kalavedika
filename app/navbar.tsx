@@ -11,7 +11,7 @@ export function Navbar() {
   return (
     <nav className="w-full flex justify-between items-center px-4 md:px-8 py-4 bg-white/90 backdrop-blur-sm shadow-md sticky top-0 z-50">
       <Link href="/" className="flex items-center">
-        <img src="/aj.svg" alt="AJIET Logo" className="h-10 w-auto" />
+        <img src="/aj.svg" alt="AJIET Logo" className="h-15 w-auto" />
       </Link>
 
       {/* Mobile menu button */}

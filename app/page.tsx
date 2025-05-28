@@ -77,18 +77,22 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Achievement Card 1 */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="h-40 bg-orange-100 flex items-center justify-center">
-                <Award className="h-20 w-20 text-orange-500" />
-              </div>
-              <div className="p-6">
-                <div className="inline-block px-3 py-1 mb-3 text-xs font-semibold bg-orange-100 text-orange-800 rounded-full">
-                RUNNER UP
-                </div>
-                <h3 className="text-lg font-bold mb-2">VTU Belgavi</h3>
-                <p className="text-sm text-gray-600">2025</p>
-              </div>
-            </div>
+<div className="bg-white rounded-lg shadow-md overflow-hidden">
+ <div className="h-40 bg-orange-100 flex items-center justify-center overflow-hidden">
+  <img
+    src="/VTU.jpeg"
+    alt="VTU Runner Up"
+    className="h-full w-full object-cover"
+  />
+</div>
+  <div className="p-6">
+    <div className="inline-block px-3 py-1 mb-3 text-xs font-semibold bg-orange-100 text-orange-800 rounded-full">
+      RUNNER UP
+    </div>
+    <h3 className="text-lg font-bold mb-2">VTU Belgavi</h3>
+    <p className="text-sm text-gray-600">2025</p>
+  </div>
+</div>
 
             {/* Achievement Card 2 */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
@@ -127,7 +131,7 @@ export default function Home() {
                 <div className="inline-block px-3 py-1 mb-3 text-xs font-semibold bg-orange-100 text-orange-800 rounded-full">
                 OVERALL CHAMPIONSHIP
                 </div>
-                <h3 className="text-lg font-bold mb-2">St.Joseph</h3>
+                <h3 className="text-lg font-bold mb-2">Sri Devi</h3>
                 <p className="text-sm text-gray-600">2025</p>
               </div>
             </div>

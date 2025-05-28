@@ -5,8 +5,9 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Award, ChevronLeft, ChevronRight, Users, Info, Trophy } from "lucide-react"
 import { useMobile } from "@/hooks/use-mobile"
+import Image from "next/image"
 
-// Define types
+// Type definitions
 type Achievement = {
   id: string
   eventId: string
@@ -31,22 +32,22 @@ type CommitteeMember = {
   imageUrl: string | null
 }
 
-// Sample achievements data
-const sampleAchievements = [
-  {
-    id: "1",
-    eventId: "sample-event-1",
-    position: "RUNNER_UP",
-    year: 2025,
-    teamName: null,
-    usn: null,
-    name: "OVERALL_RUNNER_UP",
-    imageUrl: null,
-    event: {
-      id: "sample-event-1",
-      name: "Belagavi",
-    },
-  },
+const sampleAchievements: Achievement[] = [
+{
+  id: "1",
+  eventId: "sample-event-1",
+  position: "RUNNER_UP",
+  year: 2025,
+  teamName: null,
+  usn: null,
+  name: "OVERALL_RUNNER_UP",
+  imageUrl: "/VTU.jpeg",
+  event: {
+    id: "sample-event-1",
+    name: "Belagavi"
+  }
+}, 
+
   {
     id: "2",
     eventId: "sample-event-2",
@@ -56,10 +57,7 @@ const sampleAchievements = [
     usn: null,
     name: "OVERALL_CHAMPIONSHIP",
     imageUrl: null,
-    event: {
-      id: "sample-event-2",
-      name: "Madva",
-    },
+    event: { id: "sample-event-2", name: "Madva" },
   },
   {
     id: "3",
@@ -70,10 +68,7 @@ const sampleAchievements = [
     usn: null,
     name: "OVERALL_CHAMPIONSHIP",
     imageUrl: null,
-    event: {
-      id: "sample-event-3",
-      name: "St.Joseph",
-    },
+    event: { id: "sample-event-3", name: "St.Joseph" },
   },
   {
     id: "4",
@@ -84,22 +79,18 @@ const sampleAchievements = [
     usn: null,
     name: "OVERALL_CHAMPIONSHIP",
     imageUrl: null,
-    event: {
-      id: "sample-event-4",
-      name: "Sri Devi",
-    },
+    event: { id: "sample-event-4", name: "Sri Devi" },
   },
 ]
 
-// Sample committee members data
-const sampleCommitteeMembers = [
+const sampleCommitteeMembers: CommitteeMember[] = [
   {
     id: "1",
     name: "Dr Shobhitha Shetty",
     role: "Chief Coordinator",
     email: null,
     phone: null,
-    imageUrl: null,
+    imageUrl: "/shobitha.jpg",
   },
   {
     id: "2",
@@ -132,17 +123,15 @@ export default function AboutPage() {
     const fetchData = async () => {
       try {
         setLoading(true)
-        // Fetch achievements
-        const achievementsRes = await fetch("/api/achievements")
-        if (achievementsRes.ok) {
-          const achievementsData = await achievementsRes.json()
-          if (achievementsData.achievements && achievementsData.achievements.length > 0) {
-            setAchievements(achievementsData.achievements)
+        const res = await fetch("/api/achievements")
+        if (res.ok) {
+          const data = await res.json()
+          if (data.achievements?.length > 0) {
+            setAchievements(data.achievements)
           }
         }
       } catch (error) {
         console.error("Error fetching data:", error)
-        // Keep using sample data in case of error
       } finally {
         setLoading(false)
       }
@@ -160,9 +149,7 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen flex flex-col w-full">
-
       <main className="flex-1">
-        {/* Header */}
         <section className="bg-orange-500 text-white py-12 md:py-20">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center text-center space-y-4">
@@ -174,7 +161,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Tabs */}
         <section className="py-8 bg-orange-50">
           <div className="container px-4 md:px-6">
             <Tabs defaultValue="about" value={activeTab} onValueChange={setActiveTab} className="w-full">
@@ -200,9 +186,8 @@ export default function AboutPage() {
                       <div>
                         <h2 className="text-2xl font-bold text-orange-500 mb-4">Vision of the institute</h2>
                         <p className="text-gray-700 mb-4">
-                        “To produce top-quality engineers 
-                        who are groomed for attaining excellence in their profession and competitive enough to help in the growth 
-                        of nation and global society.”
+                          “To produce top-quality engineers who are groomed for attaining excellence in their profession and
+                          competitive enough to help in the growth of nation and global society.”
                         </p>
                       </div>
                       <div className="bg-orange-100 p-6 rounded-lg">
@@ -212,22 +197,28 @@ export default function AboutPage() {
                             <div className="bg-orange-500 text-white rounded-full p-1 mt-0.5">
                               <Award className="h-4 w-4" />
                             </div>
-                            <span>To offer affordable high-quality graduate program in engineering with 
-                              value education and make the students socially responsible.</span>
+                            <span>
+                              To offer affordable high-quality graduate program in engineering with value education and make
+                              the students socially responsible.
+                            </span>
                           </li>
                           <li className="flex items-start gap-2">
                             <div className="bg-orange-500 text-white rounded-full p-1 mt-0.5">
                               <Award className="h-4 w-4" />
                             </div>
-                            <span>To support and enhance the institutional environment to attain research excellence in both 
-                              faculty and students and to inspire them to push the boundaries of knowledge base.</span>
+                            <span>
+                              To support and enhance the institutional environment to attain research excellence in both faculty
+                              and students and to inspire them to push the boundaries of knowledge base.
+                            </span>
                           </li>
                           <li className="flex items-start gap-2">
                             <div className="bg-orange-500 text-white rounded-full p-1 mt-0.5">
                               <Award className="h-4 w-4" />
                             </div>
-                            <span>To identify the common areas of interest amongst the individuals for the 
-                              effective industry- institute partnership in a sustainable way by systematically working together.</span>
+                            <span>
+                              To identify the common areas of interest amongst the individuals for the effective
+                              industry-institute partnership in a sustainable way by systematically working together.
+                            </span>
                           </li>
                           <li className="flex items-start gap-2">
                             <div className="bg-orange-500 text-white rounded-full p-1 mt-0.5">
@@ -248,39 +239,31 @@ export default function AboutPage() {
                     <div className="flex justify-between items-center mb-4">
                       <h2 className="text-2xl font-bold text-orange-500">Our Achievements</h2>
                       {!isMobile && (
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                          <button
-                            onClick={() => scrollAchievements("left")}
-                            className="p-2 rounded-full bg-orange-100 hover:bg-orange-200"
-                          >
+                        <div className="flex gap-2">
+                          <button onClick={() => scrollAchievements("left")}
+                                  className="p-2 rounded-full bg-orange-100 hover:bg-orange-200">
                             <ChevronLeft className="h-5 w-5" />
                           </button>
-                          <button
-                            onClick={() => scrollAchievements("right")}
-                            className="p-2 rounded-full bg-orange-100 hover:bg-orange-200"
-                          >
+                          <button onClick={() => scrollAchievements("right")}
+                                  className="p-2 rounded-full bg-orange-100 hover:bg-orange-200">
                             <ChevronRight className="h-5 w-5" />
                           </button>
                         </div>
                       )}
                     </div>
 
-                    <div
-                      ref={achievementsRef}
-                      className="flex overflow-x-auto space-x-4 pb-4 scrollbar-hide"
-                      style={{ scrollbarWidth: "none" }}
-                    >
+                    <div ref={achievementsRef}
+                         className="flex overflow-x-auto space-x-4 pb-4 scrollbar-hide"
+                         style={{ scrollbarWidth: "none" }}>
                       {achievements.map((achievement) => (
-                        <div
-                          key={achievement.id}
-                          className="flex-shrink-0 w-90 bg-white rounded-lg shadow-md overflow-hidden border border-orange-100"
-                        >
+                        <div key={achievement.id}
+                             className="flex-shrink-0 w-90 bg-white rounded-lg shadow-md overflow-hidden border border-orange-100">
                           <div className="h-32 bg-orange-100 flex items-center justify-center">
                             <Trophy className="h-16 w-16 text-orange-500" />
                           </div>
                           <div className="p-4">
                             <div className="inline-block px-3 py-1 mb-2 text-xs font-semibold bg-orange-100 text-orange-500 rounded-full">
-                            {achievement.position}
+                              {achievement.position}
                             </div>
                             <h3 className="font-bold mb-1">{achievement.event.name}</h3>
                             <p className="text-sm text-gray-600 mb-1">{achievement.name}</p>
@@ -300,21 +283,26 @@ export default function AboutPage() {
                 <Card>
                   <CardContent className="p-6">
                     <h2 className="text-2xl font-bold text-orange-500 mb-6">Our Committee</h2>
-
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                       {committeeMembers.map((member) => (
-                        <div
-                          key={member.id}
-                          className="bg-white rounded-lg shadow-md overflow-hidden border border-orange-100"
-                        >
-                          <div className="h-32 bg-orange-100 flex items-center justify-center">
-                            <Users className="h-16 w-16 text-orange-500" />
+                        <div key={member.id}
+                            className="bg-white rounded-lg shadow-md overflow-hidden">
+                              <div className="h-40 bg-orange-100 flex items-center justify-center overflow-hidden">
+                            {member.imageUrl ? (
+                              <Image
+                                src={member.imageUrl}
+                                alt={member.name}
+                                width={128}
+                                height={128}
+                                className="w-70 h-70 full object-contain"
+                              />
+                            ) : (
+                              <Users className="h-16 w-16 text-orange-500" />
+                            )}
                           </div>
-                          <div className="p-4">
+                          <div className="p-4 text-center">
                             <h3 className="font-bold mb-1">{member.name}</h3>
                             <p className="text-sm text-orange-500 mb-3">{member.role}</p>
-                            {member.email && <p className="text-sm text-gray-600 mb-1">Email: {member.email}</p>}
-                            {member.phone && <p className="text-sm text-gray-600">Phone: {member.phone}</p>}
                           </div>
                         </div>
                       ))}
@@ -326,7 +314,6 @@ export default function AboutPage() {
           </div>
         </section>
       </main>
-
     </div>
   )
 }

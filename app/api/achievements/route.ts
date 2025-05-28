@@ -10,7 +10,7 @@ const sampleAchievements = [
     teamName: null,
     usn: null,
     name: "OVERALL RUNNER UP",
-    imageUrl: '/VTU.jpeg',
+    imageurl: '/VTU.jpeg',
     event: {
       id: "sample-event-1",
       name: "Belagavi",
