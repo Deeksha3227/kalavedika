@@ -95,10 +95,15 @@ export default function Home() {
 </div>
 
             {/* Achievement Card 2 */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="h-40 bg-orange-100 flex items-center justify-center">
+          <div className="bg-white rounded-lg shadow-md overflow-hidden">
+          <div className="h-40 bg-orange-100 flex items-center justify-center overflow-hidden">
                 <Award className="h-20 w-20 text-orange-500" />
               </div>
+               <img
+                  src="/1.jpg"
+                  alt="VTU"
+                  className="h-10 w-0 full object-cover"
+                />
               <div className="p-6">
                 <div className="inline-block px-3 py-1 mb-3 text-xs font-semibold bg-orange-100 text-orange-800 rounded-full">
                 OVERALL CHAMPIONSHIP

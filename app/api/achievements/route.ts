@@ -24,7 +24,7 @@ const sampleAchievements = [
     teamName: null,
     usn: null,
     name: "OVERALL CHAMPIONSHIP",
-    imageUrl: null,
+    imageUrl: '/1.jpg',
     event: {
       id: "sample-event-2",
       name: "Madva",

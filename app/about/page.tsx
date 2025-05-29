@@ -56,8 +56,11 @@ const sampleAchievements: Achievement[] = [
     teamName: null,
     usn: null,
     name: "OVERALL_CHAMPIONSHIP",
-    imageUrl: null,
-    event: { id: "sample-event-2", name: "Madva" },
+      imageUrl: "/1.jpg",
+  event: {
+    id: "sample-event-2",
+    name: "Madva"
+  }
   },
   {
     id: "3",
@@ -94,11 +97,11 @@ const sampleCommitteeMembers: CommitteeMember[] = [
   },
   {
     id: "2",
-    name: "Mr Nithesh",
+    name: "Dr Nithesh K",
     role: "Coordinator",
     email: null,
     phone: null,
-    imageUrl: null,
+    imageUrl: "/nithesh.jpg",
   },
   {
     id: "3",
@@ -294,7 +297,7 @@ export default function AboutPage() {
                                 alt={member.name}
                                 width={128}
                                 height={128}
-                                className="w-70 h-70 full object-contain"
+                                className="w-full h-full object-contain"
                               />
                             ) : (
                               <Users className="h-16 w-16 text-orange-500" />
